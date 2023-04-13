@@ -35,9 +35,16 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private InputField editDmInputField;
 
+    [SerializeField] private GameObject graphScale;
+
     private void Awake()
     {
         mainCamera = Camera.main;
+    }
+
+    public void OnHideScaleToggleChanged(bool toggle)
+    {
+        graphScale.SetActive(!toggle);
     }
 
     public void ApplyStartingAmount()
